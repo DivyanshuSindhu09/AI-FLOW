@@ -20,12 +20,13 @@ const absans = Absans({
       style: "normal",
     },
   ],
-  variable : "--font-absans"
+  variable: "--font-absans",
 });
 
 export const metadata: Metadata = {
   title: "Ai Flow",
-  description: "Made by Divyanshu Sindhu",
+  description:
+    "DevOverflow is an AI-powered Q&A platform built with Next.js that reimagines Stack Overflow. It helps developers ask and answer questions smarter with AI-generated tags, summaries, and insights, while offering a scalable full-stack architecture with modern authentication and database integration.",
 };
 
 export default function RootLayout({
