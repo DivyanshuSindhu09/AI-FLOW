@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Dark variant (Tailwind v4+ syntax; agar v3 use ho to simple .dark selector hi kaafi hai) */
 @custom-variant dark (&:is(.dark *));
 
 @utility font-absans {
@@ -8,8 +9,7 @@
 }
 
 @theme inline {
-  --font-absans : var(--font-absans)
-;
+  --font-absans: var(--font-absans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -44,7 +44,8 @@
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px)}
+  --radius-xl: calc(var(--radius) + 4px);
+}
 
 @theme {
   --color-primary-100: #fff1e6;
@@ -135,6 +136,7 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+/* Base Layer */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -143,3 +145,230 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Utilities Layer */
+@layer utilities {
+  /* Background Utilities */
+  .background-light850_dark100 {
+    background-color: var(--color-light-850);
+  }
+  .dark .background-light850_dark100 {
+    background-color: var(--color-dark-100);
+  }
+
+  .background-light900_dark200 {
+    background-color: var(--color-light-900);
+  }
+  .dark .background-light900_dark200 {
+    background-color: var(--color-dark-200);
+  }
+
+  .background-light900_dark300 {
+    background-color: var(--color-light-900);
+  }
+  .dark .background-light900_dark300 {
+    background-color: var(--color-dark-300);
+  }
+
+  .background-light800_darkgradient {
+    background-color: var(--color-light-800);
+  }
+  .dark .background-light800_darkgradient {
+    background-image: linear-gradient(232deg, rgba(23, 28, 35, 0.41) 0%, rgba(19, 22, 28, 0.7) 100%);
+  }
+
+  .background-light800_dark400 {
+    background-color: var(--color-light-800);
+  }
+  .dark .background-light800_dark400 {
+    background-color: var(--color-dark-400);
+  }
+
+  .background-light700_dark400 {
+    background-color: var(--color-light-700);
+  }
+  .dark .background-light700_dark400 {
+    background-color: var(--color-dark-400);
+  }
+
+  .background-light700_dark300 {
+    background-color: var(--color-light-700);
+  }
+  .dark .background-light700_dark300 {
+    background-color: var(--color-dark-300);
+  }
+
+  .background-light800_dark300 {
+    background-color: var(--color-light-800);
+  }
+  .dark .background-light800_dark300 {
+    background-color: var(--color-dark-300);
+  }
+
+  .background-light800_dark200 {
+    background-color: var(--color-light-800);
+  }
+  .dark .background-light800_dark200 {
+    background-color: var(--color-dark-200);
+  }
+
+  .background-dark400_light900 {
+    background-color: var(--color-light-900);
+  }
+  .dark .background-dark400_light900 {
+    background-color: var(--color-dark-400);
+  }
+
+  /* Text Utilities */
+  .text-dark100_light900 {
+    color: var(--color-dark-100);
+  }
+  .dark .text-dark100_light900 {
+    color: var(--color-light-900);
+  }
+
+  .text-dark200_light900 {
+    color: var(--color-dark-200);
+  }
+  .dark .text-dark200_light900 {
+    color: var(--color-light-900);
+  }
+
+  .text-dark200_light800 {
+    color: var(--color-dark-200);
+  }
+  .dark .text-dark200_light800 {
+    color: var(--color-light-800);
+  }
+
+  .text-dark300_light700 {
+    color: var(--color-dark-300);
+  }
+  .dark .text-dark300_light700 {
+    color: var(--color-light-700);
+  }
+
+  .text-dark400_light700 {
+    color: var(--color-dark-400);
+  }
+  .dark .text-dark400_light700 {
+    color: var(--color-light-700);
+  }
+
+  .text-dark500_light700 {
+    color: var(--color-dark-500);
+  }
+  .dark .text-dark500_light700 {
+    color: var(--color-light-700);
+  }
+
+  .text-dark500_light500 {
+    color: var(--color-dark-500);
+  }
+  .dark .text-dark500_light500 {
+    color: var(--color-light-500);
+  }
+
+  .text-dark500_light400 {
+    color: var(--color-dark-500);
+  }
+  .dark .text-dark500_light400 {
+    color: var(--color-light-400);
+  }
+
+  .text-dark300_light900 {
+    color: var(--color-dark-300);
+  }
+  .dark .text-dark300_light900 {
+    color: var(--color-light-900);
+  }
+
+  .text-dark400_light800 {
+    color: var(--color-dark-400);
+  }
+  .dark .text-dark400_light800 {
+    color: var(--color-light-800);
+  }
+
+  .text-light400_light500 {
+    color: var(--color-light-400);
+  }
+  .dark .text-light400_light500 {
+    color: var(--color-light-500);
+  }
+
+  .text-dark400_light500 {
+    color: var(--color-dark-400);
+  }
+  .dark .text-dark400_light500 {
+    color: var(--color-light-500);
+  }
+
+  .text-dark400_light900 {
+    color: var(--color-dark-400);
+  }
+  .dark .text-dark400_light900 {
+    color: var(--color-light-900);
+  }
+
+  /* Borders */
+  .light-border {
+    border-color: var(--color-light-800);
+  }
+  .dark .light-border {
+    border-color: var(--color-dark-300);
+  }
+
+  .light-border-2 {
+    border-color: var(--color-light-700);
+  }
+  .dark .light-border-2 {
+    border-color: var(--color-dark-400);
+  }
+
+  /* Typography Utilities */
+  .h1-bold { font-size: 30px; font-weight: 700; line-height: 42px; letter-spacing: -0.025em; }
+  .h2-bold { font-size: 24px; font-weight: 700; line-height: 31.2px; }
+  .h2-semibold { font-size: 24px; font-weight: 600; line-height: 31.2px; }
+  .h3-bold { font-size: 20px; font-weight: 700; line-height: 26px; }
+  .h3-semibold { font-size: 20px; font-weight: 600; line-height: 24.8px; }
+  .base-medium { font-size: 18px; font-weight: 500; line-height: 25.2px; }
+  .base-semibold { font-size: 18px; font-weight: 600; line-height: 25.2px; }
+  .base-bold { font-size: 18px; font-weight: 700; line-height: 140%; }
+  .paragraph-regular { font-size: 16px; font-weight: 400; line-height: 22.4px; }
+  .paragraph-medium { font-size: 16px; font-weight: 500; line-height: 22.4px; }
+  .paragraph-semibold { font-size: 16px; font-weight: 600; line-height: 20.8px; }
+  .body-regular { font-size: 14px; font-weight: 400; line-height: 19.6px; }
+  .body-medium { font-size: 14px; font-weight: 500; line-height: 18.2px; }
+  .body-semibold { font-size: 14px; font-weight: 600; line-height: 18.2px; }
+  .body-bold { font-size: 14px; font-weight: 700; line-height: 18.2px; }
+  .small-regular { font-size: 12px; font-weight: 400; line-height: 15.6px; }
+  .small-medium { font-size: 12px; font-weight: 500; line-height: 15.6px; }
+  .small-semibold { font-size: 12px; font-weight: 600; line-height: 15.6px; }
+  .subtle-medium { font-size: 10px; font-weight: 500; line-height: 13px; }
+  .subtle-regular { font-size: 10px; font-weight: 400; line-height: 13px; }
+
+  /* Placeholder */
+  .placeholder::placeholder { color: var(--color-light-400); }
+  .dark .placeholder::placeholder { color: var(--color-light-500); }
+
+  /* Invert */
+  .invert-colors { filter: invert(1); }
+  .dark .invert-colors { filter: invert(0); }
+
+  /* Shadows */
+  .shadow-light100_dark100 { box-shadow: var(--shadow-light-100); }
+  .dark .shadow-light100_dark100 { box-shadow: var(--shadow-dark-100); }
+
+  .shadow-light100_darknone { box-shadow: var(--shadow-light-100); }
+  .dark .shadow-light100_darknone { box-shadow: none; }
+
+  /* Gradients */
+  .primary-gradient {
+    background-image: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
+  }
+  .dark-gradient {
+    background-image: linear-gradient(232deg, rgba(23, 28, 35, 0.41) 0%, rgba(19, 22, 28, 0.7) 100%);
+  }
+}
+
