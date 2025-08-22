@@ -45,6 +45,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
 }
 
 @theme {
@@ -372,3 +373,9 @@
   }
 }
 
+@utility bg-auth-dark {
+  background-image: url('/images/auth-dark.png');
+}
+@utility bg-auth-light {
+  background-image: url('/images/auth-light.png');
+}
