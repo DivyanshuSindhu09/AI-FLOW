@@ -13,29 +13,40 @@ import ROUTES from "@/constants/routes";
 import { Button } from "@/components/ui/button";
 
 const page = async () => {
-
   //! another way below without turning the component into client
 
-  const session = await auth()
-  console.log(session)
+  const session = await auth();
+  console.log(session);
+
+  //   {
+  //   user: {
+  //     name: 'Divyanshu Sindhu',
+  //     email: 'divyanshu.sindhu@gmail.com',
+  //     image: 'https://avatars.githubusercontent.com/u/183302458?v=4'
+  //   },
+  //   expires: '2025-09-21T15:05:16.669Z'
+  // }
 
 //   {
 //   user: {
-//     name: 'Divyanshu Sindhu',
+//     name: 'DIVYANSHU SINDHU',
 //     email: 'divyanshu.sindhu@gmail.com',
-//     image: 'https://avatars.githubusercontent.com/u/183302458?v=4'
+//     image: 'https://lh3.googleusercontent.com/a/ACg8ocItzx-n5Wvb8syovBvkg1IUBMX2TS3nwL-Qgpx-NNAVGFlxfK4=s96-c'
 //   },
-//   expires: '2025-09-21T15:05:16.669Z'
+//   expires: '2025-09-21T16:00:08.370Z'
 // }
 
   return (
     <>
       <div className="text-3xl w-screen h-screen bg-primary-500 text-primary-500 ">
-        <form className="pt-[100px] px-10" action={ async () => {
-          "use server"
+        <form
+          className="pt-[100px] px-10"
+          action={async () => {
+            "use server";
 
-          await signOut({redirectTo : ROUTES.SIGN_IN})
-        }}>
+            await signOut({ redirectTo: ROUTES.SIGN_IN });
+          }}
+        >
           <Button type="submit">LogOut</Button>
         </form>
       </div>
