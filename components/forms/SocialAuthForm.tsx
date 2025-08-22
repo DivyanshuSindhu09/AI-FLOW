@@ -1,14 +1,31 @@
+"use client";
+
 import React from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { toast } from "sonner";
+import { signIn } from "next-auth/react";
+import ROUTES from "@/constants/routes";
 
 const SocialAuthForm = () => {
-    //!invert-colors see in global css, the logo will look good in both light and dark themes
+  //!invert-colors see in global css, the logo will look good in both light and dark themes
   const buttonClasses =
     "flex-1 justify-center items-center text-dark200_light800 min-h-12 p-4 rounded-[8px] background-dark400_light900";
+
+  const handleSignIn = async (provider: "github" | "google") => {
+    try {
+      await signIn(provider, {
+        callbackUrl : ROUTES.HOME,
+        redirect : false
+      })
+    } catch (error) {
+      console.log(error);
+      toast.error(error instanceof Error ? error.message : "An error occured");
+    }
+  };
   return (
     <div className="mt-10 flex flex-wrap gap-2.5">
-      <Button className={buttonClasses}>
+      <Button onClick={() => handleSignIn("github")} className={buttonClasses}>
         <Image
           src="/icons/github.svg"
           alt="Github Logo"

@@ -4,6 +4,7 @@ import Absans from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/context/Theme";
 import Navbar from "@/components/navigation/navbar";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,9 +50,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          
           {children}
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );
