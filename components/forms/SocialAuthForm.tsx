@@ -10,14 +10,14 @@ import ROUTES from "@/constants/routes";
 const SocialAuthForm = () => {
   //!invert-colors see in global css, the logo will look good in both light and dark themes
   const buttonClasses =
-    "flex-1 justify-center items-center text-dark200_light800 min-h-12 p-4 rounded-[8px] background-dark400_light900";
+    "flex-1 justify-center cursor-pointer items-center text-dark200_light800 min-h-12 p-4 rounded-[8px] background-dark400_light900";
 
   const handleSignIn = async (provider: "github" | "google") => {
     try {
       await signIn(provider, {
-        callbackUrl : ROUTES.HOME,
-        redirect : false
-      })
+        callbackUrl: ROUTES.HOME,
+        redirect: true,
+      });
     } catch (error) {
       console.log(error);
       toast.error(error instanceof Error ? error.message : "An error occured");
@@ -36,7 +36,7 @@ const SocialAuthForm = () => {
         <span>Login with Github</span>
       </Button>
 
-      <Button className={buttonClasses}>
+      <Button onClick={() => handleSignIn("google")} className={buttonClasses}>
         <Image
           src="/icons/google.svg"
           alt="Google Logo"
