@@ -45,7 +45,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  
 }
 
 @theme {
@@ -149,6 +148,7 @@
 
 /* Utilities Layer */
 @layer utilities {
+  
   /* Background Utilities */
   .background-light850_dark100 {
     background-color: var(--color-light-850);
@@ -163,7 +163,14 @@
   .dark .background-light900_dark200 {
     background-color: var(--color-dark-200);
   }
+  
 
+  .btn-secondary {
+    @apply bg-light-800! dark:bg-dark-400!;
+  }
+  .btn-tertiary {
+  @apply bg-light-700! dark:bg-dark-300!;
+}
   .background-light900_dark300 {
     background-color: var(--color-light-900);
   }
@@ -175,7 +182,11 @@
     background-color: var(--color-light-800);
   }
   .dark .background-light800_darkgradient {
-    background-image: linear-gradient(232deg, rgba(23, 28, 35, 0.41) 0%, rgba(19, 22, 28, 0.7) 100%);
+    background-image: linear-gradient(
+      232deg,
+      rgba(23, 28, 35, 0.41) 0%,
+      rgba(19, 22, 28, 0.7) 100%
+    );
   }
 
   .background-light800_dark400 {
@@ -328,54 +339,162 @@
   }
 
   /* Typography Utilities */
-  .h1-bold { font-size: 30px; font-weight: 700; line-height: 42px; letter-spacing: -0.025em; }
-  .h2-bold { font-size: 24px; font-weight: 700; line-height: 31.2px; }
-  .h2-semibold { font-size: 24px; font-weight: 600; line-height: 31.2px; }
-  .h3-bold { font-size: 20px; font-weight: 700; line-height: 26px; }
-  .h3-semibold { font-size: 20px; font-weight: 600; line-height: 24.8px; }
-  .base-medium { font-size: 18px; font-weight: 500; line-height: 25.2px; }
-  .base-semibold { font-size: 18px; font-weight: 600; line-height: 25.2px; }
-  .base-bold { font-size: 18px; font-weight: 700; line-height: 140%; }
-  .paragraph-regular { font-size: 16px; font-weight: 400; line-height: 22.4px; }
-  .paragraph-medium { font-size: 16px; font-weight: 500; line-height: 22.4px; }
-  .paragraph-semibold { font-size: 16px; font-weight: 600; line-height: 20.8px; }
-  .body-regular { font-size: 14px; font-weight: 400; line-height: 19.6px; }
-  .body-medium { font-size: 14px; font-weight: 500; line-height: 18.2px; }
-  .body-semibold { font-size: 14px; font-weight: 600; line-height: 18.2px; }
-  .body-bold { font-size: 14px; font-weight: 700; line-height: 18.2px; }
-  .small-regular { font-size: 12px; font-weight: 400; line-height: 15.6px; }
-  .small-medium { font-size: 12px; font-weight: 500; line-height: 15.6px; }
-  .small-semibold { font-size: 12px; font-weight: 600; line-height: 15.6px; }
-  .subtle-medium { font-size: 10px; font-weight: 500; line-height: 13px; }
-  .subtle-regular { font-size: 10px; font-weight: 400; line-height: 13px; }
+  .h1-bold {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: -0.025em;
+  }
+  .h2-bold {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31.2px;
+  }
+  .h2-semibold {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31.2px;
+  }
+  .h3-bold {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+  .h3-semibold {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.8px;
+  }
+  .base-medium {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25.2px;
+  }
+  .base-semibold {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25.2px;
+  }
+  .base-bold {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .paragraph-regular {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+  }
+  .paragraph-medium {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+  }
+  .paragraph-semibold {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20.8px;
+  }
+  .body-regular {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+  .body-medium {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.2px;
+  }
+  .body-semibold {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.2px;
+  }
+  .body-bold {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18.2px;
+  }
+  .small-regular {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15.6px;
+  }
+  .small-medium {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15.6px;
+  }
+  .small-semibold {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.6px;
+  }
+  .subtle-medium {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 13px;
+  }
+  .subtle-regular {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13px;
+  }
 
   /* Placeholder */
-  .placeholder::placeholder { color: var(--color-light-400); }
-  .dark .placeholder::placeholder { color: var(--color-light-500); }
+  .placeholder::placeholder {
+    color: var(--color-light-400);
+  }
+  .dark .placeholder::placeholder {
+    color: var(--color-light-500);
+  }
 
   /* Invert */
-  .invert-colors { filter: invert(1); }
-  .dark .invert-colors { filter: invert(0); }
+  .invert-colors {
+    filter: invert(1);
+  }
+  .dark .invert-colors {
+    filter: invert(0);
+  }
 
   /* Shadows */
-  .shadow-light100_dark100 { box-shadow: var(--shadow-light-100); }
-  .dark .shadow-light100_dark100 { box-shadow: var(--shadow-dark-100); }
+  .shadow-light100_dark100 {
+    box-shadow: var(--shadow-light-100);
+  }
+  .dark .shadow-light100_dark100 {
+    box-shadow: var(--shadow-dark-100);
+  }
 
-  .shadow-light100_darknone { box-shadow: var(--shadow-light-100); }
-  .dark .shadow-light100_darknone { box-shadow: none; }
+  .shadow-light100_darknone {
+    box-shadow: var(--shadow-light-100);
+  }
+  .dark .shadow-light100_darknone {
+    box-shadow: none;
+  }
 
   /* Gradients */
   .primary-gradient {
     background-image: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
   }
   .dark-gradient {
-    background-image: linear-gradient(232deg, rgba(23, 28, 35, 0.41) 0%, rgba(19, 22, 28, 0.7) 100%);
+    background-image: linear-gradient(
+      232deg,
+      rgba(23, 28, 35, 0.41) 0%,
+      rgba(19, 22, 28, 0.7) 100%
+    );
   }
 }
 
 @utility bg-auth-dark {
-  background-image: url('/images/auth-dark.png');
+  background-image: url("/images/auth-dark.png");
 }
 @utility bg-auth-light {
-  background-image: url('/images/auth-light.png');
+  background-image: url("/images/auth-light.png");
+}
+
+@utility primary-text-gradient {
+  background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
