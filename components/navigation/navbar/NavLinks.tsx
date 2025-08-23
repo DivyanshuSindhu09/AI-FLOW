@@ -24,7 +24,7 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
         const LinkComponent = (
           <Link
           key={item.label}
-          className={cn(isActive ? 'primary-gradient rounded-lg text-light-900' : 'text-dark300_light900', "flex items-center justify-start gap-4 p-3 bg-transparent")}
+          className={cn(isActive ? 'primary-gradient rounded-lg text-light-900' : 'text-dark300_light900', "flex items-center justify-start gap-4 py-[6px] px-4 bg-transparent")}
           href={item.route}>
             <Image
               src={item.imageURL}
@@ -32,7 +32,7 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
               width={20}
               height={20}
             />
-            <p className={cn(isActive ? "base-bold" : "base-medium")}> {item.label} </p>
+            <p className={cn(isActive ? "base-bold" : "base-medium", "max-md:hidden")}> {item.label} </p>
           </Link>
         );
 
