@@ -6,7 +6,16 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getDeviconClassname = (techName:string) => {
-  const normalizedTechName = techName.replace(/[ .]/g, "").toLowerCase()
+  const normalizedTechName = techName.replace(/[ .]/g, "").toLowerCase() //! that's a string
+
+  const car = {
+  brand: "Tesla",
+  model: "Model S",
+  year: 2024
+};
+
+const key = "brand";
+//! console.log(car[key]) 
 
   const techMap: { [key: string]: string } = {
   // --- Web Core ---
