@@ -12,7 +12,8 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
   const userId = 1
   return (
     <>
-      {sidebarLinks.map((item) => {
+      <div className=" flex flex-col gap-2.5">
+        {sidebarLinks.map((item) => {
         const isActive =
           (pathName.includes(item.route) && item.route.length > 1) ||
           pathName === item.route;
@@ -24,7 +25,7 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
         const LinkComponent = (
           <Link
           key={item.label}
-          className={cn(isActive ? 'primary-gradient rounded-lg text-light-900' : 'text-dark300_light900', "flex items-center justify-start gap-4 py-[6px] px-4 bg-transparent")}
+          className={cn(isActive ? 'primary-gradient rounded-lg text-light-900' : 'text-dark300_light900', "flex items-center justify-start gap-4 py-3 px-4 bg-transparent")}
           href={item.route}>
             <Image
               src={item.imageURL}
@@ -32,12 +33,13 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
               width={20}
               height={20}
             />
-            <p className={cn(isActive ? "base-bold" : "base-medium", "max-md:hidden")}> {item.label} </p>
+            <p className={cn(isActive ? "base-bold" : "base-medium", "max-md:hidden max-sm:block")}> {item.label} </p>
           </Link>
         );
 
         return LinkComponent;
       })}
+      </div>
     </>
   );
 };
